@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/mixins/_breakpoints';
+@import '~bootstrap/scss/mixins/grid';
+
+$button-focused-shadow: none;
+$button-pressed-shadow: none;
+$border-radius: .4rem;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1380px,
+);
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
