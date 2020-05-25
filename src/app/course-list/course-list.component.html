@@ -1,0 +1,67 @@
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>DURATION</th>
+        <th>DURATION-UNIT</th>
+        <th>DESCRIPTION</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Course of Courses" (click)="selectCourse(Course)">
+            <td>
+                {{Course.id}}
+            </td>
+            <td>
+                {{Course.title}}</td>
+            <td>
+                {{Course.duration}}</td>
+            <td>
+                {{Course["duration-unit"]}}</td>
+            <td>
+                {{Course.description}}
+            </td>
+            <td>
+                <button class="btn btn-primary" title="edit Course" (click)="edit(Course)">Edit</button>
+            </td>
+            <td><button class="btn btn-danger" title="delete Course" (click)="delete(Course)">Delete</button></td>
+        </tr>
+
+    </tbody>
+</table>
+
+<form #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course title:
+                    <input type="text" name="title" [(ngModel)]="title" />
+                </label>
+            </div>
+
+
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course duration:
+                    <input type="number" name="duration" [(ngModel)]="duration" />
+                </label>
+            </div>
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course duration-unit:
+                    <input type="text" name="durationUnit" [(ngModel)]="durationUnit" />
+                </label>
+            </div>
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course description:
+                    <input type="text" name="description" [(ngModel)]="description" />
+                </label>
+            </div>
+        </div>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="submit" class="btn btn-primary">
+            {{ action }}
+        </button>
+    </div>
+</form>
+
+<!-- {{checkoutForm.value | json }} -->

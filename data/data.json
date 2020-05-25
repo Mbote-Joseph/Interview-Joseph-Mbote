@@ -1,14 +1,6 @@
 {
   "links": [],
-
   "courses": [
-    {
-      "id": 1,
-      "title": "Modern Web Development",
-      "duration": 5,
-      "duration-unit": "day",
-      "description": "HTML5, CSS3, ES6/JS and more"
-    },
     {
       "id": 2,
       "title": "Git",
@@ -24,18 +16,48 @@
       "description": "Intro to Python"
     },
     {
-      "id": 4,
       "title": "Java",
-      "duration": 5,
-      "duration-unit": "day",
-      "description": "Intro to Java"
+      "duration": 6,
+      "description": "java and javascript",
+      "id": 4,
+      "duration-unit": "day"
     },
     {
+      "title": "Java",
+      "duration": 66,
+      "description": "java and javascript",
       "id": 5,
-      "title": "Node.js",
+      "duration-unit": "night"
+    },
+    {
+      "title": "C",
       "duration": 5,
+      "durationUnit": "night",
+      "description": "C and C++",
+      "duration-unit": "night",
+      "id": 6
+    },
+    {
+      "title": "C",
+      "duration": 5,
+      "durationUnit": "night",
+      "description": "C and C++",
+      "duration-unit": "night",
+      "id": 7
+    },
+    {
+      "title": "C++",
+      "duration": 9,
+      "description": "c and java",
+      "id": 9,
+      "duration-unit": "night"
+    },
+    {
+      "title": "Ruby",
+      "duration": 7,
+      "description": "Java and C",
       "duration-unit": "day",
-      "description": "Intro to Node.js"
+      "id": 10
     }
   ]
 }
