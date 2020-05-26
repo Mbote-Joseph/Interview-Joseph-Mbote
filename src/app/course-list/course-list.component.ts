@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course.service';
 import { Course } from '../course.model';
-import { NgForm } from '@angular/forms';
-
+import { Alert, AlertType } from '../_alert/alert.model';
+import { AlertService } from '../_alert/alert.service';
+import { EditComponent } from '../edit/edit.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-list',
@@ -20,7 +22,11 @@ export class CourseListComponent implements OnInit {
   action: String;
   course: Course;
 
+
+
   constructor(private CourseService: CourseService,
+    private alertService: AlertService,
+    private router: Router
   ) {
     this.action = "add course";
     // this.checkoutForm = this.formBuilder.group({
@@ -43,62 +49,22 @@ export class CourseListComponent implements OnInit {
   delete(Course: Course): void {
     this.Courses = this.Courses.filter(h => h !== Course);
     this.CourseService.deleteCourse(Course).subscribe();
-  }
+    const alert = new Alert();
+    alert.id = 'delete-course';
+    alert.type = AlertType.Warning;
+    alert.autoClose = false;
+    alert.message = 'Do you want to delete' + Course.title;
 
-  add(course: any): void {
-    course.title = course.title.trim();
-    if (!course.title) { return; }
-    course['duration-unit'] = course.durationUnit;
-    delete course.durationUnit;
-    this.CourseService.addCourse(course)
-      .subscribe(Course => {
-        this.Courses.push(Course);
-      });
-  }
-
-  onSubmit(courseData: NgForm): void {
-    // console.log(courseData.value);
-
-    if (this.action === 'update') {
-      courseData.value.id = this.course.id;
-      this.update(courseData.value);
-      return;
-    }
-    // save course data to db here 
-    this.add(courseData.value)
-    // this.checkoutForm.reset();
-
-    console.warn('Your order has been submitted', courseData);
+    this.alertService.alert(alert);
+    this.alertService.info("You have deleted that field")
   }
   edit(course: Course) {
-    this.action = "update"
     // console.log(course);
-    this.course = course;
-    this.title = course.title;
-    this.duration = course.duration;
-    this.durationUnit = course['duration-unit'];
-    this.description = course.description;
-
+    this.router.navigate(['/CourseList/edit', { course: JSON.stringify(course) }])
   }
-
-  update(course: any) {
-
-    console.log(course);
-    course['duration-unit'] = course.durationUnit;
-    delete course.durationUnit;
-
-    this.CourseService.updateCourse(course)
-      .subscribe(Course => {
-        const index = this.Courses.findIndex((cos) => Course.id === cos.id);
-        this.Courses[index] = Course;
-        this.action = "add course"
-        // console.log(course);
-        this.course = null;
-        this.title = '';
-        this.duration = null;
-        this.durationUnit = '';
-        this.description = '';
-      });
+  addCourse() {
+    this.router.navigate(['/CourseList/add'])
   }
 
 }
+

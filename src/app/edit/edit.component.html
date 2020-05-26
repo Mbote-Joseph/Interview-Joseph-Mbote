@@ -1,0 +1,36 @@
+<h2>Edit Course</h2>
+
+<form #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course title:
+                    <input type="text" name="title" [(ngModel)]="title" class="form-control"
+                        placeholder="Course Title" />
+                </label>
+            </div>
+
+
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course duration:
+                    <input type="number" name="duration" [(ngModel)]="duration" class="form-control"
+                        placeholder="Course Duration" />
+                </label>
+            </div>
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course duration-unit:
+                    <input type="text" name="durationUnit" [(ngModel)]="durationUnit" class="form-control"
+                        placeholder="Duration-Unit" />
+                </label>
+            </div>
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course description:
+                    <input type="text" name="description" [(ngModel)]="description" class="form-control"
+                        placeholder="Description" />
+                </label>
+            </div>
+        </div>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button class="btn btn-primary" title="edit Course" (click)="onSubmit(checkoutForm)">Edit</button>
+    </div>
+</form>

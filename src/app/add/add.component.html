@@ -1,0 +1,41 @@
+<h2>Add Course </h2>
+<form #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)" class="col">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course title:
+                    <input type="text" name="title" [(ngModel)]="title" class="form-control"
+                        placeholder="Course Title" />
+                </label>
+            </div>
+
+
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course duration:
+                    <input type="number" name="duration" [(ngModel)]="duration" class="form-control"
+                        placeholder="Course duration" />
+                </label>
+            </div>
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course duration-unit:
+                    <input type="text" name="durationUnit" [(ngModel)]="durationUnit" class="form-control"
+                        placeholder="duration-unit" />
+                </label>
+            </div>
+            <div class="form-group col-lg-6 col-sm-12">
+                <label>Course description:
+                    <input type="text" name="description" [(ngModel)]="description" class="form-control"
+                        placeholder="description" />
+                </label>
+            </div>
+        </div>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="submit" class="btn btn-primary">
+            Add course
+        </button>
+
+        <button class="btn btn-primary" [routerLink]="['/CourseList']">
+            Back
+        </button>
+    </div>
+</form>

@@ -16,6 +16,8 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { CourseService } from './course.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FormsModule } from '@angular/forms';
     WelcomeComponent,
     AboutComponent,
     CourseListComponent,
+    EditComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     AlertModule,
     HttpClientModule,
     FormsModule
-    
+
 
   ],
   providers: [CourseService],

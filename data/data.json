@@ -2,11 +2,11 @@
   "links": [],
   "courses": [
     {
-      "id": 2,
       "title": "Git",
       "duration": 3,
-      "duration-unit": "day",
-      "description": "Git and GitHub"
+      "description": "Git and GitHub",
+      "duration-unit": "night",
+      "id": 2
     },
     {
       "id": 3,
@@ -16,48 +16,53 @@
       "description": "Intro to Python"
     },
     {
-      "title": "Java",
+      "title": "C++",
       "duration": 6,
-      "description": "java and javascript",
-      "id": 4,
-      "duration-unit": "day"
+      "description": "c and java",
+      "duration-unit": "night",
+      "id": 4
+    },
+    {
+      "title": "C++",
+      "duration": 90,
+      "description": "c and java",
+      "duration-unit": "day",
+      "id": 5
     },
     {
       "title": "Java",
-      "duration": 66,
-      "description": "java and javascript",
-      "id": 5,
-      "duration-unit": "night"
-    },
-    {
-      "title": "C",
-      "duration": 5,
-      "durationUnit": "night",
-      "description": "C and C++",
-      "duration-unit": "night",
-      "id": 6
-    },
-    {
-      "title": "C",
-      "duration": 5,
-      "durationUnit": "night",
-      "description": "C and C++",
-      "duration-unit": "night",
+      "duration": 34,
+      "description": "c and java",
+      "duration-unit": "day",
       "id": 7
     },
     {
       "title": "C++",
-      "duration": 9,
+      "duration": 4,
       "description": "c and java",
-      "id": 9,
-      "duration-unit": "night"
+      "duration-unit": "day",
+      "id": 8
+    },
+    {
+      "title": "Python",
+      "duration": 1,
+      "description": "C and  Java",
+      "duration-unit": "night",
+      "id": 9
+    },
+    {
+      "title": "C++",
+      "duration": 34,
+      "description": "c and java",
+      "duration-unit": "day",
+      "id": 10
     },
     {
       "title": "Ruby",
-      "duration": 7,
-      "description": "Java and C",
+      "duration": 6,
+      "description": "c and java",
       "duration-unit": "day",
-      "id": 10
+      "id": 11
     }
   ]
 }

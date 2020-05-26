@@ -4,6 +4,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { redirectUnauthorizedTo, canActivate } from '@angular/fire/auth-guard';
 import { CourseListComponent } from './course-list/course-list.component'
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
 const redirectUnauthorizedToLanding = redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
@@ -16,7 +18,12 @@ const routes: Routes = [
   {
     path: "CourseList", component: CourseListComponent
   },
-
+  {
+    path: "CourseList/add", component: AddComponent
+  },
+  {
+    path: "CourseList/edit", component: EditComponent
+  }
 
 ];
 
